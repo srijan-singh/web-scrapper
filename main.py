@@ -23,7 +23,7 @@ if __name__ == "__main__":
     driver = webdriver.Chrome('driver/chromedriver', options=options)
     
     index = 0
-    limit = 10
+    limit = 100
 
     for row in csvreader:
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
         url = "https://www.amazon.{}/dp/{}/".format(country,asin)
 
-        driver.implicitly_wait(2)
+        driver.implicitly_wait(10)
         driver.get(url)
 
         json_object = get_details(driver, url)
