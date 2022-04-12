@@ -20,7 +20,7 @@ def get_details(driver, url):
     image_url = driver.find_element(by=By.XPATH, value=image_xpath).get_attribute('src')
 
     # Price of the Product
-    price_xpath = r'/html/body/div[2]/div[2]/div[5]/div[4]/div[4]/div[10]/div[1]/div/table/tbody/tr[2]/td[2]/span[1]/span[2]'
+    price_xpath = r'/html/body/div[2]/div[2]/div[5]/div[4]/div[4]/div[11]/div[1]/div[1]/span[1]'
     price = driver.find_element(by=By.XPATH, value=price_xpath).text
     
     # Product Details
@@ -38,8 +38,8 @@ def get_details(driver, url):
 
 if __name__ == "__main__":
 
-    country = 'ca' 
-    asin = 'B07YYNX5X6'
+    country = 'de' 
+    asin = '000004458X'
 
     url = "https://www.amazon.{}/dp/{}".format(country,asin)
 
