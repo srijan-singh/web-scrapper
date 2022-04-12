@@ -11,6 +11,10 @@ import json
 
 if __name__ == "__main__":
 
+    test = open('test_result.txt', 'w')
+    test.write("Results\n")
+    test.close()
+
     file = open('resource\Amazon Scraping.csv')
     
     csvreader = csv.reader(file)
@@ -45,11 +49,20 @@ if __name__ == "__main__":
         json_object = get_details(driver, url)
 
         if json_object != {}:
+            test = open('test_result.txt', 'a')
+            test.write(True+'\n')
+            test.close()
             print(True)
             
             # Writing to sample.json
             with open(r'resource/result.json', 'a') as outfile:
                 json.dump(json_object, outfile)
+
+        else:
+            test = open('test_result.txt', 'a')
+            test.write(url+" not available\n")
+            test.close()
+
 
         
 
